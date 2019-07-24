@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton, Icon } from 'react-mdl';
+import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu } from 'react-mdl';
 
 class Projects extends Component{
     constructor(props){
@@ -10,18 +10,22 @@ class Projects extends Component{
     toggleCategories(){
         if(this.state.activeTab === 0){
             return(
-                <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-                    <CardTitle style={{color: 'black', height: '176px', background: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png) center / cover'}} >React Project #1</CardTitle>
-                    <CardText>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                <div className="projects-grid">
+                    <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+                        <CardTitle style={{color: '#fff', height: '176px', 
+                        background: 'url(https://miro.medium.com/max/1200/1*y6C4nSvy2Woe0m7bWEn4BA.png) center / cover'}} 
+                        >React Project #1
+                        </CardTitle>
+                        <CardText>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                         </CardText>
                         <CardActions border>
                             <Button colored>GitHub</Button>
                         </CardActions>
                         <CardMenu style={{color: '#fff'}}>
-                            <IconButton name="share" />
                         </CardMenu>
                     </Card>
+                </div>
                 )
             } else if(this.state.activeTab === 1){
             return (
@@ -49,17 +53,13 @@ class Projects extends Component{
                     <Tab>VueJS</Tab>
                     <Tab>MongoDB</Tab>
                 </Tabs>
-
-                <section className="projects-grid">
-                    <Grid className="projects-grid">
-                        <Cell col={12}>
-                            <div className="content">
-                                {this.toggleCategories()}
-                            </div>
-                        </Cell>
-                    </Grid>
-                    {this.toggleCategories()}
-                </section>
+                <Grid>
+                    <Cell col={12}>
+                        <div className="content">
+                            {this.toggleCategories()}
+                        </div>
+                    </Cell>
+                </Grid>
             </div>
         )
     }
