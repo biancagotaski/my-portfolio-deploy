@@ -29,15 +29,15 @@ class Projects extends Component{
                 )
             } else if(this.state.activeTab === 1){
             return (
-                <div><h1>This is Angular</h1></div>
+                <div><h1></h1></div>
             )
         } else if(this.state.activeTab === 2){
             return (
-                <div><h1>This is VueJS</h1></div>
+                <div><h1></h1></div>
             )
         } else if(this.state.activeTab === 3){
             return (
-                <div><h1>This is MongoDB</h1></div>
+                <div><h1></h1></div>
             )
         }
     }
@@ -48,10 +48,10 @@ class Projects extends Component{
                 <Tabs activeTab={ this.state.activeTab } onChange={(tabId) => this.setState({ activeTab: tabId})} ripple>
                     {/** Categories / Skills */}
                     {/** Projects that you want to show by category */}
-                    <Tab>React</Tab>
-                    <Tab>Angular</Tab>
-                    <Tab>VueJS</Tab>
-                    <Tab>MongoDB</Tab>
+                    <Tab>Blog Posts</Tab>
+                    <Tab>Videos</Tab>
+                    <Tab>Webinars</Tab>
+                    <Tab>Memory Game</Tab>
                 </Tabs>
                 <Grid>
                     <Cell col={12}>
